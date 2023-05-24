@@ -87,6 +87,11 @@
   color: #1D1D1F;
   font-size: 14px;
 }
+@media all and (width < 1000px) {
+  .ad {
+    flex-direction: column;
+  }
+}
 
 .ad__link {
   transition: opacity 0.7s;
@@ -271,10 +276,21 @@
   gap: 16px;
   font-size: 12px;
 }
+@media all and (width < 1000px) {
+  .footer {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media all and (width < 620px) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 .footer__title {
   color: #1D1D1F;
   font-weight: 600;
+  padding-bottom: 16px;
   transition: opacity 0.7s;
   cursor: pointer;
 }
@@ -286,7 +302,9 @@
 }
 
 .footer__link {
+  display: block;
   color: #424245;
+  padding: 8px 0;
   transition: opacity 0.7s;
   cursor: pointer;
 }
