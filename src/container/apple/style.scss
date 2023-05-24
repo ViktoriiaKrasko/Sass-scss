@@ -36,6 +36,10 @@
     padding: s.space(3) s.space(1);
     color: s.color("colorText");
     font-size: s.size("medium");
+
+    @media all and (width < s.screen('tablet')){
+        flex-direction: column;
+    }
 }
 
 .ad__link {
@@ -48,8 +52,6 @@
     background-repeat: no-repeat;
     background-position: bottom center;
 
-    // padding-top: s.space(20);
-    // padding-bottom: s.space(20);
 }
 
 .product__content {
@@ -155,7 +157,6 @@
     gap: s.space(5);
 }
 
-
 $productImage: (
     "iphone-pro" "/img/iphone-pro.png" #000,
     "iphone" "/img/iphone.png" #fafafa,
@@ -184,19 +185,26 @@ $productImage: (
     padding-bottom: s.space(10);
     gap: s.space(4);
     font-size: s.size("small");
+
+    @media all and (width < s.screen("tablet")) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media all and (width < s.screen("mobile")) {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.footer__title{
-    color: s.color('colorText');
+.footer__title {
+    color: s.color("colorText");
     font-weight: 600;
+    padding-bottom: s.space(4);
     @include s.click;
 }
-
 
 .footer__link {
+    display: block;
     color: #424245;
+    padding: s.space(2) 0;
     @include s.click;
 }
-
-
-
